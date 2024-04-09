@@ -2,14 +2,14 @@
  * @Author: yinhan 1738348915@qq.com
  * @Date: 2024-03-18 10:42:35
  * @LastEditors: yinhan 1738348915@qq.com
- * @LastEditTime: 2024-03-18 13:24:20
+ * @LastEditTime: 2024-03-18 13:54:03
  * @FilePath: \ct-is\src\app\home\home.tsx
  * @Description:
  */
 "use client";
 
 import NavBar from "./NavBar";
-import { Drop, Carousel, CarRecommend } from "@/components";
+import { Drop, CarouselList, CarRecommend } from "@/components";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -33,21 +33,21 @@ export default function Home() {
           bounce: 500,
           stiffness: 100,
         }}
-        className="flex flex-row items-center justify-between"
+        className="h-20 flex flex-row items-center justify-between"
       >
-        <Image src={"/logo.png"} width={60} height={60} alt="Logo" />
+        <Image
+          className="bg-blue-500"
+          src={"/logo.png"}
+          width={150}
+          height={100}
+          alt="Logo"
+        />
         <NavBar></NavBar>
         <Drop></Drop>
       </motion.div>
 
-      <Image
-        src="https://suncars-1251117131.cos.ap-shanghai.myqcloud.com/internal-site/main_pic7.png"
-        width={100}
-        height={678}
-        alt="Sale Data"
-      />
-
       <motion.div
+        className="pt-0"
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -57,7 +57,7 @@ export default function Home() {
           stiffness: 100,
         }}
       >
-        <Carousel />
+        <CarouselList />
       </motion.div>
 
       <motion.div
